@@ -15,25 +15,26 @@
         <div class="containerSearchBars">
             <div class="containerJobSearchBar">
                 <i class="fas fa-search"></i>
-                <input type="text" class="searchInput" placeholder="Job title or keyword" />
+                <input type="text" class="searchInput" placeholder="Job title or keyword" v-model="titleSearchTerm" />
 
             </div>
             <div class="containerCountrySearchBar">
                 <i class="fas fa-search"></i>
-                <input type="text" class="searchInput" placeholder="Country or timezone" />
-                <button class="clearButton">
+                <input type="text" class="searchInput" placeholder="Country or timezone" v-model="locationSearchTerm" />
+                <button class="clearButton" @click="clearTitleLocationTerms">
                     <span>Clear</span>
                 </button>
-                <button class="searchButton">
+                <button class="searchButton" @click="searchJobs">
                     <span>Search</span>
                 </button>
             </div>
         </div>
 
         <div class="containerFilters">
-            <CompanyFilter v-model:selectedCompanies="selectedCompanies" v-model:searchTerm="searchTerm" :jobs="jobsJson"/>
+            <CompanyFilter v-model:selectedCompanies="selectedCompanies" v-model:searchTerm="CompaniesSearchTerm"
+                :jobs="jobsBase" />
 
-            <SalaryFilter v-model:selectedSalaryRange="selectedSalaryRange" />
+            <SalaryFilter ref="salaryFilterRef" v-model:selectedSalaryRange="selectedSalaryRange" />
 
             <TypeWorkFilter v-model:selectedTypes="selectedTypes" />
 
@@ -42,6 +43,8 @@
             </button>
         </div>
     </div>
+
+    <JobsSection :jobs="jobsJson" />
 </template>
 
 <script setup>
@@ -49,36 +52,47 @@ import { ref, onMounted } from 'vue'
 import CompanyFilter from './CompanyFilter.vue'
 import SalaryFilter from './SalaryFilter.vue'
 import TypeWorkFilter from './TypeWorkFilter.vue'
+import { getJobs } from '../composables/useJobs.js'
+import JobsSection from './JobsSection.vue';
 
-
-const pathJobsJson = '/jobs-list.json'
-
-const jobsJson = ref([])
+const salaryFilterRef = ref(null)
 
 const selectedCompanies = ref([])
-const searchTerm = ref('')
+const CompaniesSearchTerm = ref('')
 const selectedSalaryRange = ref([])
 const selectedTypes = ref([])
+const titleSearchTerm = ref('')
+const locationSearchTerm = ref('')
+
+const clearTitleLocationTerms = () => {
+    titleSearchTerm.value = ''
+    locationSearchTerm.value = ''
+}
 
 const clearAllFilters = () => {
-  selectedCompanies.value = []
-  selectedSalaryRange.value = null
-  selectedTypes.value = []
-  searchTerm.value = ''
+    selectedCompanies.value = []
+    salaryFilterRef.value.clearSelection()
+    selectedTypes.value = []
+    CompaniesSearchTerm.value = ''
 }
 
-const loadJobs = async () => {
-    try {
-        const response = await fetch(pathJobsJson)
-        const data = await response.json()
-        jobsJson.value = data
-    } catch (error) {
-        console.error('Erro ao carregar empregos:', error)
-    }
+const { jobsJson, loadJobs } = getJobs()
+
+const jobsBase = ref([])
+
+const searchJobs = async () => {
+    await loadJobs({
+        name: titleSearchTerm.value,
+        location: locationSearchTerm.value,
+        salaryMin: selectedSalaryRange.value.min,
+        salaryMax: selectedSalaryRange.value.max,
+        companies: selectedCompanies.value.map(c => c.name)
+    })
 }
 
-onMounted(() => {
-    loadJobs()
+onMounted(async () => {
+    await loadJobs()
+    jobsBase.value = [...jobsJson.value]
 })
 
 </script>

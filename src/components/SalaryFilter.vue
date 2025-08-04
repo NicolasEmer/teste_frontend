@@ -67,8 +67,12 @@ const salaryRanges = [
     { labelMin: '$180,000+', labelMax: '', min: 180000, max: Infinity }
 ]
 
+selectedSalaryRange.value = salaryRanges[0]
+
 const clearSelection = () => {
-    selectedSalaryRange.value = null
+    selectedSalaryRange.value = salaryRanges[0]
 }
+
+defineExpose({ clearSelection })
 
 </script>

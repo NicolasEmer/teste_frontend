@@ -56,8 +56,8 @@ const props = defineProps({
 const isOpen = ref(false)
 
 const emit = defineEmits([
-  'update:selectedCompanies',
-  'update:searchTerm'
+    'update:selectedCompanies',
+    'update:searchTerm'
 ])
 
 const selectedCompanies = computed({
@@ -110,5 +110,11 @@ const clearSelectionAndSearch = () => {
     selectedCompanies.value = []
     searchTerm.value = ''
 }
+
+function getSelectedCompanies() {
+    return selectedCompanies.value
+}
+
+defineExpose({ getSelectedCompanies })
 
 </script>

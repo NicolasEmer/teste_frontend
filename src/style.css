@@ -315,3 +315,103 @@ a:hover {
 .clearAllFiltersButton:hover {
   background-color: #c5c5c5;
 }
+
+.containerJobsSection {
+  width: 100%;
+  min-height: 60vh;
+  height: auto;
+  margin-top: 4%;
+  background-color: white;
+  padding-top: 3%;
+}
+
+.containerJobsSectionTitle {
+  margin-left: 5%;
+}
+
+.jobCard {
+  display: flex;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 24px 24px 24px 20px;
+  background-color: white;
+  transition: box-shadow 0.3s ease;
+  width: 60%;
+  margin-top: 1%;
+  margin-left: 5%;
+  justify-content: space-between;
+}
+.jobCard:hover {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.job {
+  display: flex;
+  gap: 20px;
+}
+
+.jobCompanyLogo {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.jobInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.jobTitle {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0;
+  margin-bottom: 12px;
+}
+
+.jobMeta {
+  font-size: 0.9rem;
+  color: #555;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.companyName {
+  font-weight: 600;
+  color: #222;
+}
+
+.locationTag {
+  background-color: #f0f0f0;
+  padding: 2px 8px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+}
+
+.jobTags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.tag {
+  font-size: 0.75rem;
+  padding: 4px 8px;
+  border-radius: 10px;
+  color: white;
+}
+
+.tagPurple {
+  background-color: #6b5b95;
+}
+
+.tagBlue {
+  background-color: #0077cc;
+}
+
+.jobTime {
+  color: #888;
+  white-space: nowrap;
+}
