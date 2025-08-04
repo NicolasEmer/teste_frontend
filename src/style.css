@@ -68,3 +68,250 @@ a:hover {
   height: 32px;
   border-radius: 50%;
 }
+
+.sectionSearchBar {
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 4%;
+  position: relative;
+}
+
+.containerTitle {
+  height: 30%;
+  width: 100%;
+}
+
+.smallTitle {
+  font-size: 13px;
+}
+
+.company {
+  font-weight: bold;
+  color: #7c3aed;
+}
+
+.containerSearchBars {
+  display: flex;
+  height: 3.5rem;
+  width: 100%;
+  margin-top: 2%;
+}
+
+.containerJobSearchBar {
+  width: 40%;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  padding-left: 1%;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 20px;
+  border: none;
+  outline: none;
+}
+
+.containerCountrySearchBar {
+  width: 60%;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  padding-left: 1%;
+  margin-left: 0.1%;
+}
+
+.clearButton {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #5f5f5f;
+  margin-right: 0.3rem;
+  padding: 0.7rem;
+  border-radius: 0.5rem; 
+}
+.clearButton:hover {
+  background-color: #c5c5c5;
+}
+
+.searchButton {
+  background-color: #7c3aed;
+  border: none;
+  border-radius: 0.5rem; 
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: white;
+  padding: 0.7rem;
+  margin-right: 0.5rem;
+}
+
+.containerFilters {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+  height: 3.5rem;
+  margin-top: 0.1%;
+  background-color: white;
+}
+
+.containerIndividualFilters {
+  margin-left: 1%;
+}
+
+.dropdownToggle {
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+  padding: 0.5rem 1rem;
+  border: 1px solid #ccc;
+  background-color: white;
+  border-radius: 6px;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.dropdownMenu {
+  position: absolute;
+  width: 18rem;
+  top: 100%;
+  margin-top: 0.25rem;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 0.5rem;
+  z-index: 1000;
+  max-height: 200px;
+  overflow-y: auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.dropdownTitle {
+  display: inline-block;
+  width: 50%;
+}
+
+.dropdownClearButton {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #5f5f5f;
+  margin-left: 27%;
+  padding: 0.7rem;
+  border-radius: 0.5rem; 
+}
+.dropdownClearButton:hover {
+  background-color: #c5c5c5;
+}
+
+.containerDropdownSearch {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  border: 1px solid #808080;
+  border-radius: 0.5rem;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+.dropdownSearchInput {
+  padding: 2%;
+  outline: none;
+  border: none;
+}
+
+.dropdownSelectedCompanies {
+  display: flex;
+  margin-bottom: 0.25rem;
+  font-size: 0.95rem;
+  align-items: center;
+}
+
+.dropdownItem {
+  display: flex;
+  margin-bottom: 0.25rem;
+  font-size: 0.95rem;
+  align-items: center;
+}
+
+.companyLogo {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  margin-right: 0.5rem;
+  border-radius: 50%;
+}
+
+.dropdownselectedSalaryRange{
+  display: flex;
+  margin-bottom: 0.25rem;
+  font-size: 0.95rem;
+  align-items: center;
+}
+
+.dropdownSelectedRange{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.25rem;
+  font-size: 0.95rem;
+  align-items: center;
+}
+
+.custom-select-wrapper {
+  display: inline-block;
+  position: relative;
+}
+
+.custom-select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: 1px solid #808080;
+  border-radius: 0.4rem;
+  padding: 0.5rem 2rem 0.5rem 0.6rem;
+  font-size: 0.9rem;
+  font-family: sans-serif;
+  cursor: pointer;
+  width: 250px;
+}
+
+.custom-select-wrapper::after {
+  content: '▼';
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #888;
+}
+
+.dropdownSelectAllButton {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #5f5f5f;
+  margin-left: 20%;
+  padding: 0.7rem;
+  border-radius: 0.5rem; 
+}
+.dropdownSelectAllButton:hover {
+  background-color: #c5c5c5;
+}
+
+.clearAllFiltersButton {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #5f5f5f;
+  margin-right: 0.5rem;
+  margin-left: auto;
+  padding: 0.7rem;
+  border-radius: 0.5rem; 
+}
+.clearAllFiltersButton:hover {
+  background-color: #c5c5c5;
+}
