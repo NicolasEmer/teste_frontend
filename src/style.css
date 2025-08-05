@@ -444,7 +444,7 @@ a:hover {
   justify-content: center;
 }
 
-h2 {
+.emailTitle {
   font-size: 18px;
   margin-bottom: 8px;
   color: #7f4a94;

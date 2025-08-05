@@ -1,7 +1,7 @@
 <template>
     <div class="containerIndividualFilters">
         <button class="dropdownToggle" @click="toggleDropdown">
-            <span>Salary ▼</span>
+            <span>Salary <i class="fas fa-chevron-down"></i></span>
         </button>
 
         <div v-if="isOpen" class="dropdownMenu">

@@ -4,7 +4,7 @@
             <i class="fas fa-paper-plane"></i>
         </div>
 
-        <h2>Weekly newsletter</h2>
+        <h2 class="emailTitle">Weekly newsletter</h2>
         <p class="description">
             We'll keep you updated when the best new remote jobs pop up on Himalayas.
         </p>

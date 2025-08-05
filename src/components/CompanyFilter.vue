@@ -2,7 +2,7 @@
     <div class="containerIndividualFilters">
         <button class="dropdownToggle" @click="toggleDropdown">
             {{ selectedCompanies.length ? `${selectedCompanies.length} companies` : 'Company' }}
-            <span>▼</span>
+            <span><i class="fas fa-chevron-down"></i></span>
         </button>
 
         <div v-if="isOpen" class="dropdownMenu">
