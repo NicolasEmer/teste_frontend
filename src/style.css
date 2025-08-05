@@ -317,6 +317,7 @@ a:hover {
 }
 
 .containerJobsSection {
+  display: flex;
   width: 100%;
   min-height: 60vh;
   height: auto;
@@ -325,8 +326,12 @@ a:hover {
   padding-top: 3%;
 }
 
-.containerJobsSectionTitle {
-  margin-left: 5%;
+.containerJobsSectionContent {
+  width: 60%;
+  min-height: 60vh;
+  height: auto;
+  padding-left: 5%;
+  margin-right: 3%;
 }
 
 .jobCard {
@@ -336,9 +341,8 @@ a:hover {
   padding: 24px 24px 24px 20px;
   background-color: white;
   transition: box-shadow 0.3s ease;
-  width: 60%;
-  margin-top: 1%;
-  margin-left: 5%;
+  width: 92%;
+  margin-top: 6px;
   justify-content: space-between;
 }
 .jobCard:hover {
@@ -414,4 +418,71 @@ a:hover {
 .jobTime {
   color: #888;
   white-space: nowrap;
+}
+
+.newsletterBox {
+  max-width: 50rem;
+  max-height: 17rem;
+  margin-left: auto;
+  margin-right: 5%;
+  margin-top: 27px;
+  background: #f5effc;
+  padding: 24px;
+  border-radius: 5px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  font-family: Arial, sans-serif;
+  border: 1px solid #e2e2e2;
+}
+
+.iconContainer {
+  width: 48px;
+  height: 48px;
+  background-color: #dccdec;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h2 {
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: #7f4a94;
+}
+
+.description {
+  font-size: 14px;
+  color: #7f4a94;
+  margin-bottom: 16px;
+}
+
+.emailInput {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.privacy {
+  font-size: 12px;
+  color: #7f4a94;
+  margin-bottom: 12px;
+}
+
+.subscribeButton {
+  width: 100%;
+  background-color: #8b5cf6;
+  color: white;
+  padding: 10px;
+  border: none;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.subscribeButton:hover {
+  background-color: #7c3aed;
 }
